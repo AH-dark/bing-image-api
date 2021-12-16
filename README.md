@@ -1,2 +1,1 @@
-# BingImageApi
-Bing 壁纸API，使用Next.js编写
+This is a starter template for [Learn Next.js](https://nextjs.org/learn).
