@@ -1,0 +1,11 @@
+blockquote {
+    border-radius: 25px;
+    background: #dcdcdc repeat left top;
+    padding: 10px 15px;
+    margin: 0;
+    width: 80%;
+}
+
+blockquote p {
+    margin: 0
+}
