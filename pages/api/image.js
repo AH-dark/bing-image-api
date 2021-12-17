@@ -2,7 +2,7 @@ import BingAPI, { BasePath } from '../../middleware/BingAPI'
 
 export default Image
 
-async function Image ( req, gres ) {
+function Image ( req, gres ) {
     const reqMethod = req.method
     if ( reqMethod === "GET" || reqMethod === "POST" || reqMethod === "HEAD" || reqMethod === "OPTION" ) {
         gres.setHeader( "Access-Allow-Control-Origin", "*" )

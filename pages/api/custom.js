@@ -2,7 +2,7 @@ import BingAPI, { BasePath, getBaseURL } from '../../middleware/BingAPI'
 
 export default Custom
 
-async function Custom ( req, gres ) {
+function Custom ( req, gres ) {
     const url = new URL( req.url )
     const requestMethod = url.searchParams.get( "method" ) ? url.searchParams.get( "method" ) : "default"
     const customIdx = url.searchParams.get( "idx" ) ? url.searchParams.get( "idx" ) : 0
