@@ -1,19 +1,12 @@
-import BingAPI, { BasePath, getBaseURL }   from '../../middleware/BingAPI'
-import { NextApiRequest, NextApiResponse } from 'next'
+import BingAPI, { BasePath, getBaseURL } from '../../middleware/BingAPI'
 
 export default Custom
 
-/**
- * 自定义API
- * @param {NextApiRequest} req
- * @param {NextApiResponse<Response>} gres
- * @constructor
- * @api
- */
 async function Custom ( req, gres ) {
-    const requestMethod = req.query[ "method" ] ? req.query[ "method" ] : "default"
-    const customIdx = req.query[ "idx" ] ? req.query[ "idx" ] : 0
-    const imageKey = req.query[ "key" ] ? req.query[ "key" ] : "url"
+    const url = new URL( req.url )
+    const requestMethod = url.searchParams.get( "method" ) ? url.searchParams.get( "method" ) : "default"
+    const customIdx = url.searchParams.get( "idx" ) ? url.searchParams.get( "idx" ) : 0
+    const imageKey = url.searchParams.get( "key" ) ? url.searchParams.get( "key" ) : "url"
     
     const reqMethod = req.method
     if ( reqMethod === "GET" || reqMethod === "POST" || reqMethod === "HEAD" || reqMethod === "OPTION" ) {

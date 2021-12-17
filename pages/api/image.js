@@ -1,15 +1,7 @@
-import BingAPI, { BasePath }               from '../../middleware/BingAPI'
-import { NextApiRequest, NextApiResponse } from 'next'
+import BingAPI, { BasePath } from '../../middleware/BingAPI'
 
 export default Image
 
-/**
- * 简单图片API
- * @param {NextApiRequest} req
- * @param {NextApiResponse<any>} gres
- * @constructor
- * @api
- */
 async function Image ( req, gres ) {
     const reqMethod = req.method
     if ( reqMethod === "GET" || reqMethod === "POST" || reqMethod === "HEAD" || reqMethod === "OPTION" ) {
@@ -17,11 +9,13 @@ async function Image ( req, gres ) {
         gres.setHeader( "Access-Allow-Max-Age", 600 )
     }
     
+    const url = new URL( req.url )
+    
     if ( req.method === "GET" ) {
         BingAPI.get( BasePath, {
             params: {
                 format: "js",
-                idx: req.query[ "idx" ] ? req.query[ "idx" ] : 0,
+                idx: url.searchParams.get( "idx" ) ? url.searchParams.get( "idx" ) : 0,
                 n: 1,
                 mkt: "zh-CN"
             }
@@ -38,7 +32,7 @@ async function Image ( req, gres ) {
         BingAPI.get( BasePath, {
             params: {
                 format: "js",
-                idx: req.query[ "idx" ] ? req.query[ "idx" ] : 0,
+                idx: url.searchParams.get( "idx" ) ? url.searchParams.get( "idx" ) : 0,
                 n: 1,
                 mkt: "zh-CN"
             }
