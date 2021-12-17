@@ -9,8 +9,6 @@ function Image ( req, gres ) {
         gres.setHeader( "Access-Allow-Max-Age", 600 )
     }
     
-    const url = new URL( req.url )
-    
     if ( req.method === "GET" ) {
         BingAPI.get( BasePath, {
             params: {

@@ -3,7 +3,6 @@ import BingAPI, { BasePath, getBaseURL } from '../../middleware/BingAPI'
 export default Custom
 
 function Custom ( req, gres ) {
-    const url = new URL( req.url )
     const requestMethod = req.query[ "method" ] ? req.query[ "method" ] : "default"
     const customIdx = req.query[ "idx" ] ? req.query[ "idx" ] : 0
     const imageKey = req.query[ "key" ] ? req.query[ "key" ] : "url"
