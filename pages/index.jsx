@@ -18,6 +18,7 @@ import HeaderBar      from '../components/HeaderBar'
 import Head           from 'next/head'
 import "@fontsource/roboto"
 import { makeStyles } from '@mui/styles'
+import { useRouter }  from 'next/router'
 
 const useStyles = makeStyles( {
     code: {
@@ -35,6 +36,26 @@ const useStyles = makeStyles( {
         backgroundColor: "rgba(102, 178, 255, 0.15)"
     }
 } )
+
+function ActiveLink ( { path } ) {
+    const router = useRouter();
+    
+    const GoTo = ( e ) => {
+        e.preventDefault()
+        router.push( path )
+    }
+    
+    return (
+        <Link href={path}
+              target={"_blank"}
+              rel={"noopener nofollow"}
+              underline={"hover"}
+              onClick={GoTo}
+        >
+            {path}
+        </Link>
+    )
+}
 
 /**
  * @description 首页
@@ -152,28 +173,16 @@ export default function Home () {
                         {"你可以访问尝试一下"}
                         <ul style={{ margin: "2px 0" }}>
                             <li>
-                                <Link href={"/api/custom?method=json"} target={"_blank"} rel={"noopener nofollow"}
-                                      underline={"hover"}>
-                                    /api/custom?method=json
-                                </Link>
+                                <ActiveLink path={"/api/custom?method=json"}/>
                             </li>
                             <li>
-                                <Link href={"/api/custom?method=json&key=image"} target={"_blank"}
-                                      rel={"noopener nofollow"} underline={"hover"}>
-                                    /api/custom?method=json&key=image
-                                </Link>
+                                <ActiveLink path={"/api/custom?method=json&key=image"}/>
                             </li>
                             <li>
-                                <Link href={"/api/custom?method=plain"} target={"_blank"} rel={"noopener nofollow"}
-                                      underline={"hover"}>
-                                    /api/custom?method=plain
-                                </Link>
+                                <ActiveLink path={"/api/custom?method=plain"}/>
                             </li>
                             <li>
-                                <Link href={"/api/custom?method=element&key=img"} target={"_blank"}
-                                      rel={"noopener nofollow"} underline={"hover"}>
-                                    /api/custom?method=element&key=img
-                                </Link>
+                                <ActiveLink path={"/api/custom?method=element&key=img"}/>
                             </li>
                         </ul>
                     </Typography>
