@@ -4,9 +4,9 @@ export default Custom
 
 function Custom ( req, gres ) {
     const url = new URL( req.url )
-    const requestMethod = url.searchParams.get( "method" ) ? url.searchParams.get( "method" ) : "default"
-    const customIdx = url.searchParams.get( "idx" ) ? url.searchParams.get( "idx" ) : 0
-    const imageKey = url.searchParams.get( "key" ) ? url.searchParams.get( "key" ) : "url"
+    const requestMethod = req.query[ "method" ] ? req.query[ "method" ] : "default"
+    const customIdx = req.query[ "idx" ] ? req.query[ "idx" ] : 0
+    const imageKey = req.query[ "key" ] ? req.query[ "key" ] : "url"
     
     const reqMethod = req.method
     if ( reqMethod === "GET" || reqMethod === "POST" || reqMethod === "HEAD" || reqMethod === "OPTION" ) {

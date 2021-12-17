@@ -15,7 +15,7 @@ function Image ( req, gres ) {
         BingAPI.get( BasePath, {
             params: {
                 format: "js",
-                idx: url.searchParams.get( "idx" ) ? url.searchParams.get( "idx" ) : 0,
+                idx: req.query[ "idx" ] ? req.query[ "idx" ] : 0,
                 n: 1,
                 mkt: "zh-CN"
             }
@@ -32,7 +32,7 @@ function Image ( req, gres ) {
         BingAPI.get( BasePath, {
             params: {
                 format: "js",
-                idx: url.searchParams.get( "idx" ) ? url.searchParams.get( "idx" ) : 0,
+                idx: req.query[ "idx" ] ? req.query[ "idx" ] : 0,
                 n: 1,
                 mkt: "zh-CN"
             }
