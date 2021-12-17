@@ -1,6 +1,8 @@
 import BingAPI, { BasePath } from '../../middleware/BingAPI'
+import runMiddleware         from '../../middleware/cors'
 
 export default ( req, gres ) => {
+    runMiddleware( req, gres )
     BingAPI.get( BasePath, {
         params: {
             format: "js",
