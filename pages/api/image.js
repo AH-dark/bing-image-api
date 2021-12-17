@@ -1,6 +1,5 @@
 import BingAPI, { BasePath }               from '../../middleware/BingAPI'
 import { NextApiRequest, NextApiResponse } from 'next'
-import runMiddleware                       from '../../middleware/cors'
 
 export default Image
 
@@ -12,7 +11,12 @@ export default Image
  * @api
  */
 async function Image ( req, gres ) {
-    await runMiddleware( req, gres )
+    const reqMethod = req.method
+    if ( reqMethod === "GET" || reqMethod === "POST" || reqMethod === "HEAD" || reqMethod === "OPTION" ) {
+        gres.setHeader( "Access-Allow-Control-Origin", "*" )
+        gres.setHeader( "Access-Allow-Max-Age", 600 )
+    }
+    
     if ( req.method === "GET" ) {
         BingAPI.get( BasePath, {
             params: {

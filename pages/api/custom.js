@@ -1,8 +1,5 @@
-// noinspection JSValidateJSDoc
-
 import BingAPI, { BasePath, getBaseURL }   from '../../middleware/BingAPI'
 import { NextApiRequest, NextApiResponse } from 'next'
-import runMiddleware                       from '../../middleware/cors'
 
 export default Custom
 
@@ -14,10 +11,15 @@ export default Custom
  * @api
  */
 async function Custom ( req, gres ) {
-    await runMiddleware( req, gres )
     const requestMethod = req.query[ "method" ] ? req.query[ "method" ] : "default"
     const customIdx = req.query[ "idx" ] ? req.query[ "idx" ] : 0
     const imageKey = req.query[ "key" ] ? req.query[ "key" ] : "url"
+    
+    const reqMethod = req.method
+    if ( reqMethod === "GET" || reqMethod === "POST" || reqMethod === "HEAD" || reqMethod === "OPTION" ) {
+        gres.setHeader( "Access-Allow-Control-Origin", "*" )
+        gres.setHeader( "Access-Allow-Max-Age", 600 )
+    }
     
     BingAPI.get( BasePath, {
         params: {

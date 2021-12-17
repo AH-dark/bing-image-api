@@ -1,8 +1,12 @@
 import BingAPI, { BasePath } from '../../middleware/BingAPI'
-import runMiddleware         from '../../middleware/cors'
 
 export default ( req, gres ) => {
-    runMiddleware( req, gres )
+    const reqMethod = req.method
+    if ( reqMethod === "GET" || reqMethod === "POST" || reqMethod === "HEAD" || reqMethod === "OPTION" ) {
+        gres.setHeader( "Access-Allow-Control-Origin", "*" )
+        gres.setHeader( "Access-Allow-Max-Age", 600 )
+    }
+    
     BingAPI.get( BasePath, {
         params: {
             format: "js",
