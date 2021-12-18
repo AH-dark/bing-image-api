@@ -86,6 +86,15 @@ export default function Home () {
         }
     ]
     
+    const table1 = [
+        {
+            name: "idx",
+            effect: "返回图片的日期，在0-8范围内",
+            example: "0（今天） / 1（昨天）",
+            default: "0"
+        }
+    ]
+    
     return (
         <>
             <Head>
@@ -132,6 +141,36 @@ export default function Home () {
                         {"API地址："}
                         <code className={styles.code}>{"https://bing-image-api.vercel.app/api/image"}</code><br/>
                         {"GET请求会直接返回302请求到图片，POST请求会输出bing获取的对应图片的json信息"}
+                        <TableContainer component={Paper} style={{
+                            marginTop: 8,
+                            marginBottom: 12
+                        }}>
+                            <Table sx={{ minWidth: 650 }} aria-label="simple table">
+                                <TableHead>
+                                    <TableRow>
+                                        <TableCell>查询字符串</TableCell>
+                                        <TableCell>作用</TableCell>
+                                        <TableCell>示例</TableCell>
+                                        <TableCell>默认</TableCell>
+                                    </TableRow>
+                                </TableHead>
+                                <TableBody>
+                                    {table1.map( ( row ) => (
+                                        <TableRow
+                                            key={row.name}
+                                            sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                                        >
+                                            <TableCell component="th" scope="row">
+                                                {row.name}
+                                            </TableCell>
+                                            <TableCell>{row.effect}</TableCell>
+                                            <TableCell>{row.example}</TableCell>
+                                            <TableCell>{row.default}</TableCell>
+                                        </TableRow>
+                                    ) )}
+                                </TableBody>
+                            </Table>
+                        </TableContainer>
                     </Typography>
                     <Typography variant={"h6"} component={"h3"} mb={1} mt={1}>
                         {"### 自定义图片"}
