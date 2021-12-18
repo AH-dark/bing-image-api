@@ -94,7 +94,7 @@ export default function Home () {
             <CssBaseline/>
             <HeaderBar title={"Home"}/>
             <Container maxWidth={"xl"}>
-                <Box mt={4}>
+                <Box mt={10} mb={4}>
                     <Typography variant={"h4"} component={"h1"} mb={2}>
                         {"# Bing Image API"}
                     </Typography>
@@ -136,7 +136,7 @@ export default function Home () {
                     <Typography variant={"h6"} component={"h3"} mb={1} mt={1}>
                         {"### 自定义图片"}
                     </Typography>
-                    <Typography variant={"body1"} component={"p"}>
+                    <Typography variant={"body1"} component={"p"} mb={1}>
                         {"API地址："}
                         <code className={styles.code}>{"https://bing-image-api.vercel.app/api/custom"}</code><br/>
                         {"参数："}
@@ -185,6 +185,17 @@ export default function Home () {
                                 <ActiveLink path={"/api/custom?method=element&key=img"}/>
                             </li>
                         </ul>
+                    </Typography>
+                    <Divider/>
+                    <Typography variant={"h5"} component={"h2"} mb={1} mt={1}>
+                        {"## CDN"}
+                    </Typography>
+                    <Typography variant={"body1"} component={"p"} mt={1} mb={1}>
+                        {"你可以使用AHdark部署的带有CDN的函数"}<br/>
+                        <Link href={"https://bing.ahdark.com"} target={"_self"} rel={"noreferrer"}>
+                            bing.ahdark.com
+                        </Link><br/>
+                        {"此站点使用腾讯云CDN、CloudFront CDN进行边缘网络加速，给予用户更好的体验。"}
                     </Typography>
                 </Box>
             </Container>

@@ -19,7 +19,7 @@ export default function HeaderBar ( props ) {
     }
     return (
         <Box sx={{ flexGrow: 1 }}>
-            <AppBar position={"static"} className={classes.root}>
+            <AppBar position={"fixed"} className={classes.root}>
                 <Toolbar>
                     <IconButton
                         size="large"
