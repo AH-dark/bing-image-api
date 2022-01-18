@@ -19,6 +19,7 @@ import Head from "next/head";
 import "@fontsource/roboto";
 import { makeStyles } from "@mui/styles";
 import { useRouter } from "next/router";
+import { TableType } from "../types/config/table.config";
 
 const useStyles = makeStyles({
     root: {
@@ -69,7 +70,7 @@ function ActiveLink({ path }: { path: string }) {
 export default function Home() {
     const styles = useStyles();
 
-    const table = [
+    const table: TableType[] = [
         {
             name: "method",
             effect: "返回值的方法，例如跳转、json",
@@ -90,7 +91,7 @@ export default function Home() {
         },
     ];
 
-    const table1 = [
+    const table1: TableType[] = [
         {
             name: "idx",
             effect: "返回图片的日期，在0-8范围内",

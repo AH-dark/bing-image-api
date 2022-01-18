@@ -17,12 +17,12 @@ const useStyles = makeStyles({
     },
 });
 
-export default function HeaderBar(props) {
+export default function HeaderBar(props: { title: string }) {
     const classes = useStyles();
 
     const router = useRouter();
     const GoHome = () => {
-        router.push("/").then((r) => console.log(r));
+        router.push("/").then((r: boolean) => console.log(r));
     };
     return (
         <Box sx={{ flexGrow: 1 }}>

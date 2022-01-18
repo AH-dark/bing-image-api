@@ -1,12 +1,12 @@
-import axios from "axios";
+import axios, { AxiosInstance } from "axios";
 
-export const getBaseURL = () => {
+export const getBaseURL: () => string = () => {
     return "/";
 };
 
-const instance = axios.create( {
+const instance: AxiosInstance = axios.create({
     baseURL: getBaseURL(),
-    withCredentials: true
-} )
+    withCredentials: true,
+});
 
-export default instance
+export default instance;

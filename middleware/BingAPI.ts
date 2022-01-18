@@ -1,13 +1,13 @@
-import axios from "axios";
+import axios, { AxiosInstance } from "axios";
 import { Config } from "../config";
 
-export const getBaseURL = (isTrim?: boolean) => {
+export const getBaseURL: (isTrim?: boolean) => string = (isTrim?: boolean) => {
     return "https://" + Config.endpoint.toString() + (isTrim ? "" : "/");
 };
 
-export const BasePath = "/HPImageArchive.aspx";
+export const BasePath: string = "/HPImageArchive.aspx";
 
-const instance = axios.create({
+const instance: AxiosInstance = axios.create({
     baseURL: getBaseURL(),
     withCredentials: true,
     headers: {
