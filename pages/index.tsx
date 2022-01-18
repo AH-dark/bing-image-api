@@ -12,34 +12,37 @@ import {
     TableContainer,
     TableHead,
     TableRow,
+    Theme,
     Typography,
 } from "@mui/material";
 import HeaderBar from "../components/HeaderBar";
 import Head from "next/head";
 import "@fontsource/roboto";
-import { makeStyles } from "@mui/styles";
+import { createStyles, makeStyles } from "@mui/styles";
 import { useRouter } from "next/router";
 import { TableType } from "../types/config/table.config";
 
-const useStyles = makeStyles({
-    root: {
-        "& code": {
-            direction: "ltr",
-            display: "inline-block",
-            fontSize: "0.8125rem",
-            lineHeight: 1.5,
-            letterSpacing: 0,
-            fontFamily:
-                'Consolas, Menlo, Monaco, "Andale Mono", "Ubuntu Mono", monospace',
-            fontWeight: 400,
-            "-webkit-font-smoothing": "subpixel-antialiased",
-            padding: "0 5px",
-            borderRadius: 5,
-            color: "rgb(32, 38, 45)",
-            backgroundColor: "rgba(102, 178, 255, 0.15)",
+const useStyles = makeStyles((theme: Theme) =>
+    createStyles({
+        root: {
+            "& code": {
+                direction: "ltr",
+                display: "inline-block",
+                fontSize: "0.8125rem",
+                lineHeight: 1.5,
+                letterSpacing: 0,
+                fontFamily:
+                    'Consolas, Menlo, Monaco, "Andale Mono", "Ubuntu Mono", monospace',
+                fontWeight: 400,
+                "-webkit-font-smoothing": "subpixel-antialiased",
+                padding: "0 5px",
+                borderRadius: 5,
+                color: "rgb(32, 38, 45)",
+                backgroundColor: "rgba(102, 178, 255, 0.15)",
+            },
         },
-    },
-});
+    })
+);
 
 function ActiveLink({ path }: { path: string }) {
     const router = useRouter();
