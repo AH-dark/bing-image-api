@@ -26,6 +26,7 @@ export default (req: NextApiRequest, res: NextApiResponse) => {
         .then((r: AxiosResponse<BingAPIType>) => {
             console.log(r.status);
             console.log(r.data);
+            // TODO: Use image buffer delivery instead of redirection
             if (r.status === 200) {
                 res.writeHead(302, {
                     Location: getBaseURL(true) + r.data.images[0].url,
