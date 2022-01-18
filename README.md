@@ -56,3 +56,13 @@
 [bing.ahdark.com](https://bing.ahdark.com)
 
 此站点使用腾讯云CDN、CloudFront CDN进行边缘网络加速，给予用户更好的体验。
+
+---
+
+## Config
+
+由于中国网络的特殊性，你可以更改函数调用的Endpoint。
+
+只需要设置环境变量`endpoint`，例如`cn.bing.com`，默认为`www.bing.com`。
+
+获取的图片地址、Redirect地址也会因此而改变。
