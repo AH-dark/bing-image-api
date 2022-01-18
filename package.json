@@ -28,10 +28,12 @@
     "classnames": "^2.3.1",
     "cors": "^2.8.5",
     "next": "latest",
+    "prettier": "^2.5.1",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-markdown": "^7.1.1",
-    "react-syntax-highlighter": "^15.4.5"
+    "react-syntax-highlighter": "^15.4.5",
+    "typescript": "^4.5.4"
   },
   "license": "MIT"
 }
