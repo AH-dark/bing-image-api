@@ -3,6 +3,7 @@
  * @see https://cn.bing.com/HPImageArchive.aspx?format=js&idx=0&n=8&mkt=zh-CN
  * @api
  * @type BingAPIType
+ * @readonly
  */
 
 export type BingAPIType = {
