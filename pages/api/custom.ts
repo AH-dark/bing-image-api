@@ -17,7 +17,7 @@ function Custom(req: NextApiRequest, res: NextApiResponse) {
         reqMethod === "HEAD" ||
         reqMethod === "OPTION"
     ) {
-        res.setHeader("Access-Allow-Control-Origin", "*");
+        res.setHeader("Access-Control-Allow-Origin", "*");
         res.setHeader("Access-Allow-Max-Age", 600);
     }
 
