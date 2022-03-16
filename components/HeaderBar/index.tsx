@@ -3,13 +3,13 @@ import {
     AppBar,
     Box,
     IconButton,
-    Link,
+    Link, Theme,
     Toolbar,
-    Typography,
+    Typography, useMediaQuery
 } from "@mui/material";
 import { GitHub as GitHubIcon, Home as HomeIcon } from "@mui/icons-material";
-import { makeStyles } from "@mui/styles";
-import { useRouter } from "next/router";
+import { makeStyles, useTheme }                   from "@mui/styles";
+import { useRouter }                              from "next/router";
 
 const useStyles = makeStyles({
     root: {
@@ -19,6 +19,8 @@ const useStyles = makeStyles({
 
 export default function HeaderBar(props: { title: string }) {
     const classes = useStyles();
+    const theme = useTheme<Theme>();
+    const isMobileSize = useMediaQuery(theme.breakpoints.down("sm"));
 
     const router = useRouter();
     const GoHome = () => {
@@ -55,7 +57,7 @@ export default function HeaderBar(props: { title: string }) {
                             edge={"end"}
                             size={"large"}
                             aria-label={"github"}
-                            sx={{ mr: 2 }}
+                            sx={{ mr: isMobileSize?undefined:2 }}
                             color={"inherit"}
                         >
                             <GitHubIcon />
