@@ -1,8 +1,8 @@
 import axios, { AxiosInstance } from "axios";
 import { Config } from "../config";
 
-export const getBaseURL: (isTrim?: boolean) => string = (isTrim?: boolean) => {
-    return "https://" + Config.endpoint.toString() + (isTrim ? "" : "/");
+export const getBaseURL = () => {
+    return "https://" + Config.endpoint.toString();
 };
 
 export const BasePath: string = "/HPImageArchive.aspx";
