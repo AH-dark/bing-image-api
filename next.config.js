@@ -1,4 +1,1 @@
-module.exports = {
-    reactStrictMode: true,
-    poweredByHeader: true
-};
+module.exports = {};
