@@ -1,5 +1,5 @@
-import { Config } from "./types/config/config";
+import { Config as ConfigType } from "./types/config/config";
 
-export const Config: Config = {
+export const Config: ConfigType = {
     endpoint: process.env.ENDPOINT || "www.bing.com",
 };
