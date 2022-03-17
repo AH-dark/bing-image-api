@@ -15,19 +15,6 @@ import { createStyles, makeStyles } from "@mui/styles";
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
-        background: {
-            backgroundImage: "url(/api/new)",
-            opacity: 1,
-            backgroundPosition: "center",
-            backgroundSize: "cover",
-            display: "block",
-            position: "fixed",
-            top: 0,
-            bottom: 0,
-            left: 0,
-            right: 0,
-            zIndex: -1,
-        },
         container: {
             minHeight: "calc(100vh - 16px)",
             display: "flex",
@@ -59,6 +46,19 @@ const useStyles = makeStyles((theme: Theme) =>
                 marginBottom: theme.spacing(1),
             },
         },
+        background: {
+            backgroundImage: "url(/api/new)",
+            opacity: 1,
+            backgroundPosition: "center",
+            backgroundSize: "cover",
+            display: "block",
+            position: "fixed",
+            top: 0,
+            bottom: 0,
+            left: 0,
+            right: 0,
+            zIndex: -1,
+        },
     })
 );
 /**
@@ -71,14 +71,15 @@ export default function Home() {
     const [hostname, setHostname] = useState("");
 
     useEffect(() => {
+        const port = Number(window.location.port);
         setHostname(
-            window.location.port === "80" || window.location.port === "443"
+            port !== 80 && port !== 443
                 ? window.location.protocol + "//" + window.location.hostname
                 : window.location.protocol +
                       "//" +
                       window.location.hostname +
                       ":" +
-                      window.location.port
+                      port
         );
     }, []);
 
@@ -90,11 +91,7 @@ export default function Home() {
             <CssBaseline />
             <HeaderBar title={"Home"} />
             <Container maxWidth={"md"} className={styles.container}>
-                <Paper
-                    className={styles.paper}
-                    elevation={3}
-                    variant={"outlined"}
-                >
+                <Paper className={styles.paper} elevation={3}>
                     <Typography variant={"h4"} component={"h1"}>
                         {"Bing Image API"}
                     </Typography>

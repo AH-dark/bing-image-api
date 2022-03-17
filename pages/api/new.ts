@@ -1,7 +1,7 @@
 import BingAPI, { BasePath, getBaseURL } from "../../middleware/BingAPI";
 import { NextApiRequest, NextApiResponse } from "next";
 import axios, { AxiosResponse } from "axios";
-import { BingAPIType } from "../../types/bing/api.type";
+import { BingAPIType } from "../../types/bing/api";
 
 export default New;
 
