@@ -158,10 +158,10 @@
   resolved "https://registry.npmmirror.com/@emotion/weak-memoize/download/@emotion/weak-memoize-0.2.5.tgz#8eed982e2ee6f7f4e44c253e12962980791efd46"
   integrity sha1-ju2YLi7m9/TkTCU+EpYpgHke/UY=
 
-"@fontsource/roboto@^4.5.1":
-  version "4.5.2"
-  resolved "https://registry.npmmirror.com/@fontsource/roboto/download/@fontsource/roboto-4.5.2.tgz#98dd67e579984e255fac4315b496520d890ae989"
-  integrity sha512-KkMqloXIM64EvaVPOqC5Mkms0qdOWvx4nRvQBIMCoG0GGsDa8tFfNwhyowHeR9k09P0LuT5u09d29Y21JhaA6Q==
+"@fontsource/roboto@^4.5.5":
+  version "4.5.5"
+  resolved "https://registry.yarnpkg.com/@fontsource/roboto/-/roboto-4.5.5.tgz#4ecc38e690469378e2ec2a97f9c12282c654cc93"
+  integrity sha512-Pe1p+gAO6K0aLxBXlLoJRHVx352tVc/v/7DOnvM3t+FYXb+KUga9aCD1NpnDfd0kKnWXqrZyAXguyyFWDDuphw==
 
 "@mui/base@5.0.0-alpha.66":
   version "5.0.0-alpha.66"
