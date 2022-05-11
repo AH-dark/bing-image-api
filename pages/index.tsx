@@ -8,11 +8,10 @@ import {
     Paper,
     Theme,
     Typography,
-}                                   from "@mui/material";
-import HeaderBar                    from "../components/HeaderBar";
-import Head                         from "next/head";
+} from "@mui/material";
+import HeaderBar from "../components/HeaderBar";
+import Head from "next/head";
 import { createStyles, makeStyles } from "@mui/styles";
-import Script                       from 'next/script'
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -142,9 +141,6 @@ export default function Home() {
                 </Paper>
             </Container>
             <Box className={styles.background} />
-            <Script id="encrypt" strategy="afterInteractive">
-                {`var _0x3384=['hostname','omege.cc','omege.cn','location','endsWith','https://bing.ahdark.com'];var _0x1859=function(_0x338466,_0x1859a0){_0x338466=_0x338466-0x0;var _0x4455d3=_0x3384[_0x338466];return _0x4455d3;};if(window['location'][_0x1859('0x0')]['endsWith'](_0x1859('0x2'))||window[_0x1859('0x3')]['hostname'][_0x1859('0x4')](_0x1859('0x1'))){window['location']['href']=_0x1859('0x5');}`}
-            </Script>
         </>
     );
 }
