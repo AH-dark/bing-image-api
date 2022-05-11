@@ -23,7 +23,7 @@
     "@fontsource/roboto": "^4.5.1",
     "@mui/icons-material": "^5.2.4",
     "@mui/material": "^5.2.4",
-    "@mui/styles": "^5.2.3",
+    "@mui/styles": "^5.7.0",
     "axios": "^0.27.2",
     "next": "latest",
     "prettier": "^2.6.2",
