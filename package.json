@@ -12,6 +12,10 @@
     "url": "https://ahdark.com"
   },
   "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AH-dark/bing-image-api"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",

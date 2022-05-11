@@ -4,7 +4,7 @@
 
 ---
 
-开源代码：<https://github.com/AH-dark/BingImageApi>
+开源代码：<https://github.com/AH-dark/bing-image-api>
 
 ## 每日图片
 

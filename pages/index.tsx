@@ -101,7 +101,7 @@ export default function Home() {
                     <Typography variant={"body2"} component={"p"}>
                         {"开源代码："}
                         <Link
-                            href={"https://github.com/AH-dark/BingImageApi"}
+                            href={"https://github.com/AH-dark/bing-image-api"}
                             rel={"noopener"}
                             underline={"hover"}
                             target={"_blank"}

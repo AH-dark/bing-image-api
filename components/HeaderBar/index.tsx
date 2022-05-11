@@ -48,9 +48,9 @@ export default function HeaderBar(props: { title: string }) {
                         {props.title}
                     </Typography>
                     <Link
-                        href={"https://github.com/AH-dark/BingImageApi"}
+                        href={"https://github.com/AH-dark/bing-image-api"}
                         target={"_blank"}
-                        rel={"noopener noreferrer"}
+                        rel={"noreferrer"}
                         color={"inherit"}
                     >
                         <IconButton
