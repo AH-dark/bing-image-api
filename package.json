@@ -24,9 +24,9 @@
   "dependencies": {
     "@emotion/react": "^11.9.0",
     "@emotion/styled": "^11.8.1",
-    "@mui/icons-material": "^5.8.2",
+    "@mui/icons-material": "^5.8.3",
     "@fontsource/roboto": "^4.5.7",
-    "@mui/material": "^5.8.2",
+    "@mui/material": "^5.8.3",
     "@mui/styles": "^5.8.3",
     "axios": "^0.27.2",
     "next": "latest",
@@ -37,6 +37,6 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "@types/node": "^17.0.40"
+    "@types/node": "^17.0.41"
   }
 }
