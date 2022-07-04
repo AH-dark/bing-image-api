@@ -22,11 +22,11 @@
     "start": "next start"
   },
   "dependencies": {
-    "@emotion/react": "^11.9.0",
+    "@emotion/react": "^11.9.3",
     "@emotion/styled": "^11.8.1",
     "@mui/icons-material": "^5.8.3",
     "@fontsource/roboto": "^4.5.7",
-    "@mui/material": "^5.8.3",
+    "@mui/material": "^5.8.6",
     "@mui/styles": "^5.8.3",
     "axios": "^0.27.2",
     "next": "latest",
